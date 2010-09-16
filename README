@@ -1,0 +1,18 @@
+This is meant for Ubuntu 9.10
+
+First put one.py where you want it and add these lines to your .bashrc or /etc/bash.bashrc:
+
+function command_not_found_handle {
+	/path/to/one.py $*
+	return 127
+}
+
+Next, run the Shelly.pl script to activate Shelly.  You may want to activate Shelly every time you boot by putting something like this in /etc/rc.local:
+
+perl /path/to/Shelly.pl > /tmp/shelly.log &
+
+Alternatively, you can just run `make install' as yourself to edit just your .bashrc and as root to edit root's .bashrc and /etc/rc.local
+
+Hope somebody enjoys this :)
+
+-Eli Cohen
