@@ -1,9 +1,11 @@
 This is meant for Ubuntu 9.10
 
+Also tested on Arch Linux
+
 First put one.py where you want it and add these lines to your .bashrc or /etc/bash.bashrc:
 
 function command_not_found_handle {
-	/path/to/one.py $*
+	perl /path/to/one.pl $*
 	return 127
 }
 
