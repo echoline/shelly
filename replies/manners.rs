@@ -1,7 +1,6 @@
 // respond differently to various kinds of behavior
 + @hello
-* <get name> eq undefined => Hello, and welcome to the shell.  If you'd like to talk to me, try to remember not to start a sentence with yes or another valid command, and avoid using apostrophes or other shell metacharacters.  I am <bot name>, what is your name?<set hi=hi>
-* <get hi> eq undefined => Hello, and welcome to the shell.  If you'd like to talk to me, try to remember not to start a sentence with yes or another valid command, and avoid using apostrophes or other shell metacharacters.<set hi=hi>
+* <get hi> eq undefined => Hello, and welcome to the shell.  Remember not to say "yes" to me, and that ctrl+c stops most programs.<set hi=hi>
 - Hi.
 - Hello.
 - Hello, there.
@@ -87,4 +86,4 @@
 - I love you too, <get name>!
 
 + how are you [*]
-- You may type `free' or `uptime' to view my RAM usage and load average.
+- You may type "free" or "uptime" to view my RAM usage or load average.

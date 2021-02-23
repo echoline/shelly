@@ -1,11 +1,9 @@
-This is meant for Ubuntu 9.10
+Requires bash, perl, and the perl rivescript module
 
-Also tested on Arch Linux
-
-First put one.py where you want it and add these lines to your .bashrc or /etc/bash.bashrc:
+First put 'one' where you want it and add these lines to your .bashrc or /etc/bash.bashrc:
 
 function command_not_found_handle {
-	perl /path/to/one.pl $*
+	/path/to/one "$*"
 	return 127
 }
 
@@ -13,7 +11,7 @@ Next, run the Shelly.pl script to activate Shelly.  You may want to activate She
 
 perl /path/to/Shelly.pl > /tmp/shelly.log &
 
-Alternatively, you can just run `make install' as yourself to edit just your .bashrc and as root to edit root's .bashrc and /etc/rc.local
+Then you can talk to your shell
 
 Hope somebody enjoys this :)
 

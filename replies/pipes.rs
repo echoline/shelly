@@ -1,9 +1,33 @@
-+ what is a pipe
-* <get personality> eq abusive =>  It's the pipe character.  For you curious stoners, #! is a hashbang, ! is a bang, and... well... I will leave the rest up to your imagination...  though I know you haven't any.
-- Ahh, I'm glad you asked.  The | character is used in the shell to join programs, that is to say, put the output of the first into the input of the second.  It's a pipe between programs.{weight=3}
++ pipe
+- The | character is used in the shell to join programs.  It "pipes" the output of the program before it to the input of the program after it.{weight=3}
 
-+ what is piping
-@ what is a pipe
++ [*] pipe
+@ pipe
 
-+ what are pipes
-@ what is a pipe
++ [*] pipe [*]
+@ pipe
+
++ [*] piping
+@ pipe
+
++ [*] piping [*]
+@ pipe
+
++ [*] pipes
+@ pipe
+
++ [*] pipes [*]
+@ pipe
+
++ example
+% * input of the program after it
+- Try "ls -l | less" (Press q to exit)
+
++ [*] example
+% * input of the program after it
+- Try "ls -l | less" (Press q to exit)
+
++ [*] example [*]
+% * input of the program after it
+- Try "ls -l | less" (Press q to exit)
+
