@@ -1,5 +1,5 @@
 + directory
-- Directories are like folders.  You can change between them with cd, and list their contents with ls.
+- Directories are like folders.  You can change between them with cd, and list their contents with ls.  Directories are basically a special type of file listing other files.
 
 + directories
 @ directory
@@ -32,7 +32,7 @@
 @ which directory is this
 
 + go home
-- Type cd by itself to go to your home directory :P
+- Type cd by itself to go to your home directory.  ~ is a shortcut character for it as well.  You can type "cd ~".
 
 + how (do|can) i list [*]
 @ how do i view the contents of a directory
@@ -42,3 +42,4 @@
 
 + (what|where) are all the commands
 - A list of directories searched for commands is stored in the variable $PATH.
+

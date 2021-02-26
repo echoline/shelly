@@ -55,10 +55,10 @@
 - <bot master>.
 
 + where (are you|are you from|do you live)
-- I am embedded in this program, the shell, with the intent of making it easier to learn about and use.
+- I am <bot name>. I am in this program, the shell, with the intent of making it easier to learn about and use.
 
 + what are you
-- Call me what you will; {@where are you}
+- {@where are you}
 
 + [*] (how about|call you) *
 % call me what you will [*]

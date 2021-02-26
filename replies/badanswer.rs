@@ -130,7 +130,7 @@
 - {@bad answer}
 
 + can i teach you
-- Yes, if I give you a bad answer, just say "Bad answer" and you can teach me a new response.
+- If I give you a bad answer, just say "Bad answer" and you can teach me a new response.
 
 + can you learn
 - {@can i teach you}
@@ -152,3 +152,7 @@
 
 + do you learn *
 - {@can i teach you}
+
++ how (do|can) i (teach|train) you
+- {@can i teach you}
+

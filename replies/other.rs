@@ -2,7 +2,7 @@
 - Ok, <set it=<star>><get it> is the topic of discussion.
 
 + its *
-* <get it> eq undefined => What is `it' in this case?
+* <get it> eq undefined => What is "it" in this case?
 - Oh, the <star> of <get it>.
 
 + *
@@ -45,3 +45,9 @@
 - Very carefully.
 - Like anything else.
 - I'll be honest with you, I don't have a clue.
+
++ what is it
+- I don't understand what you mean.
+- I lost the context.
+- Hmmm. <get it>?
+
