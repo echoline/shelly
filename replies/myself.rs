@@ -1,5 +1,8 @@
 // Tell the user stuff about ourself.
 
++ what is shelly
+- I am Shelly. I am a chatbot here in the command prompt shell to help you learn about this.
+
 + <bot name>
 - Yes?
 

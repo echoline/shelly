@@ -64,12 +64,17 @@
 	} elsif (scalar(@args) == 3) {
 		open(APPEND, '>>' . $xrs);
 		print APPEND '+ ' . $rs->_formatMessage($args[1]) . "\n";
-		print APPEND '% ' . $rs->_formatMessage($args[2]) . "\n";
+		if ($rs->_formatMessage($args[2]) ne "silent") {
+			print APPEND '% ' . $rs->_formatMessage($args[2]) . "\n";
+		}
 		print APPEND '- ' . $args[0] . "\n\n";
 		close(APPEND);
 		$rs->loadFile($xrs);
 		$rs->sortReplies;
-		return "Okay, I'll try to remember to respond, \"" . $args[0] . "\" when you say, \"" . $args[1] . "\" if I have just said, \"" . $args[2] . "\"";
+		if ($rs->_formatMessage($args[2]) ne "silent") {
+			return "Okay, I'll try to remember to respond, \"" . $args[0] . "\" when you say, \"" . $args[1] . "\" if I have just said, \"" . $args[2] . "\"";
+		}
+		return "";
 	} else {
 		return scalar(@args) . " is not a valid arity to this object";
 	}

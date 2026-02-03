@@ -209,7 +209,7 @@
 - Whether or not you can <star> depends on you more than on me.
 - On the command line?
 
-+ (who|when|where|how|why)
++ (when|where|how|why)
 - Why do you ask?
 - Does that question interest you?
 - What is it you really want to know?

@@ -2,6 +2,7 @@
 
 > begin
 	+ request // This trigger is tested first.
+	* <reply2> ne undefined => {ok}<call>learn <bot xrs> {sentence}<input>.{/sentence}:<reply2>:silent</call>
 	- {ok}    // An {ok} in the response means it's okay to get a real reply
 < begin
 

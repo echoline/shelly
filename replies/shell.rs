@@ -145,5 +145,5 @@
 @ file
 
 + what are (some|the|all of the|all the) commands
-- There are many commands.  You can press the tab key to auto-complete commands, "ls" is a command to list out directories, "/bin" is a directory full of commands, so "ls /bin" or "ls /usr/bin" are good places to see lists of commands.  Many commands have manual pages accessed with the "man" command.
+- There are many commands.  You can press the tab key to auto-complete commands, "ls" is a command to list out directories, "/bin" is a directory full of commands, so "ls /bin" or "ls /usr/bin" are good places to see lists of commands.  Many commands have manual pages accessed with the "man" command, as in "man ls"
 

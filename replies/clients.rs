@@ -13,6 +13,10 @@
 * <get name> ne undefined => Oh, you changed your name.<set name=<formal>>
 - <set name=<formal>>Nice to meet you, <formal>.
 
++ what about (you|your|yours) [*]
+% nice to meet you *
+- My name is <bot name>.
+
 + to what
 % [*] oh you changed your name [*]
 - <get name>, of course.

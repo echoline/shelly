@@ -13,15 +13,18 @@
 + how (can|do|does) (i|one) (use|go to|browse) [the] internet
 @ browser
 
-+ how do i browse
-@ browser
-
-+ how do i browser
++ how (can|do|does) (i|one) (browse|browser)
 @ browser
 
 + launch
 - Simply type the program's name. You can put an & after any command to put it in the background.
 
-+ how (can|do|does) (i|one) (launch|open) *
++ edit{weight=100}
+- There are several common editor programs including nano, vi, ed, and others.
+
++ how (can|do|does) (i|one) (launch|run) *
 @ launch
+
++ how (can|do|does) (i|one) (open|edit) *
+@ edit
 
