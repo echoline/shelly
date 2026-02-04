@@ -87,3 +87,15 @@
 
 + how are you [*]
 - You may type "free" or "uptime" to view my RAM usage or load average.
+
++ (hi|hello|hey) [there] how are you [*]
+@ how are you
+
++ how are you able to *
+- I am a chatbot program in the shell.
+- I am meant to be an educational chatbot program.
+- I'm not sure.
+
++ how are you doing the *
+@ how are you able to speak
+

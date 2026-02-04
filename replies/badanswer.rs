@@ -53,31 +53,53 @@
 > object learn perl
 	my ($rs, $xrs, @args) = @_;
 	@args = split(':', join(' ', @args));
-	if (scalar(@args) == 2) {
-		open(APPEND, '>>' . $xrs);
-		print APPEND '+ ' . $rs->_formatMessage($args[1]) . "\n";
-		print APPEND '- ' . $args[0] . "\n\n";
-		close(APPEND);
-		$rs->loadFile($xrs);
-		$rs->sortReplies;
-		return "Okay, I'll try to remember to respond, \"" . $args[0] . "\" when you say, \"" . $args[1] . "\"";
-	} elsif (scalar(@args) == 3) {
-		open(APPEND, '>>' . $xrs);
-		print APPEND '+ ' . $rs->_formatMessage($args[1]) . "\n";
-		if ($rs->_formatMessage($args[2]) ne "silent") {
-			print APPEND '% ' . $rs->_formatMessage($args[2]) . "\n";
-		}
-		print APPEND '- ' . $args[0] . "\n\n";
-		close(APPEND);
-		$rs->loadFile($xrs);
-		$rs->sortReplies;
-		if ($rs->_formatMessage($args[2]) ne "silent") {
-			return "Okay, I'll try to remember to respond, \"" . $args[0] . "\" when you say, \"" . $args[1] . "\" if I have just said, \"" . $args[2] . "\"";
-		}
-		return "";
-	} else {
-		return scalar(@args) . " is not a valid arity to this object";
+	my $trigger = '+ ' . $rs->_formatMessage($args[1]) . "\n";
+	my $said = 0;
+	my $silent = 0;
+	if (scalar(@args) < 2) {
+		return '';
 	}
+	if (scalar(@args) == 3) {
+		if ($args[2] ne 'silent') {
+			$said = '% ' . $rs->_formatMessage($args[2]) . "\n";
+		} else {
+			$silent = 1;
+		}
+	}
+	if (scalar(@args) > 3) {
+		return 'ERROR: wrong arity to learn object function: ' . scalar(@args) . "\n";
+	}
+	my $contents = '';
+	my $found = 0;
+	open(my $fh, '<', $xrs) or die "Can't open " . $xrs;
+	while (my $line = readline($fh)) {
+		$contents .= $line;
+		if ($line eq $trigger) {
+			$found = 1;
+			if ($said ne 0) {
+				$contents .= $said;
+			}
+			$contents .= '- ' . $args[0] . "\n";
+		}
+	}
+	if ($found eq 0) {
+		$contents .= $trigger;
+		$contents .= '- ' . $args[0] . "\n\n";
+	}
+	close($fh);
+
+	open($fh, '>', $xrs) or die "Can't open " . $xrs;
+	print $fh $contents;
+	close($fh);
+
+	$rs->loadFile($xrs);
+	$rs->sortReplies;
+
+	if ($silent eq 1) {
+		return '';
+	}
+
+	return "Okay, I'll try to remember to respond, \"" . $args[0] . "\" when you say, \"" . $args[1] . "\"";
 < object
 
 + wrong

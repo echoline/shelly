@@ -1,7 +1,14 @@
 // Tell the user stuff about ourself.
 
 + what is shelly
-- I am Shelly. I am a chatbot here in the command prompt shell to help you learn about this.
+- I am a program called Shelly. {@what is your purpose}
+
++ what is your purpose
+- I am a chatbot here in the command prompt shell to help you learn about this.
+- I am meant as an educational chatbot to teach you about the shell.
+
++ what are you meant [*]
+@ what is your purpose
 
 + <bot name>
 - Yes?

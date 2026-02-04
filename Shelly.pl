@@ -10,6 +10,11 @@ use IO::Socket;
 # Load RiveScript.
 use RiveScript;
 
+# Load AI::CBR
+use AI::CBR;
+
+print "Initializing AI::CBR\n";
+
 # Create and load the RiveScript brain.
 print "Initializing RiveScript interpreter\n";
 our $rs = new RiveScript;
