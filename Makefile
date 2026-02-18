@@ -8,7 +8,8 @@ replies/tldr.rs: tldr2rive tldr
 	@echo converting tldr to rivescript
 	@for f in tldr/pages.en/common/* tldr/pages.en/linux/*; do \
 		./tldr2rive < $$f; \
-	done > replies/tldr.rs
+	done > tldr.rs.tmp
+	@./collapse.pl < tldr.rs.tmp > replies/tldr.rs
 
 tldr2rive: tldr2rive.c
 

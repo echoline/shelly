@@ -24,10 +24,10 @@
 	- Yes, no or cancel?
 
 	+ @yes
-	- <call>learn <bot xrs> <get badanswer-newresp>:<get badanswer-input>:<get badanswer-that></call>{topic=random}
+	- <call>learn <bot xrs> <get badanswer-newresp><get badanswer-input><get badanswer-that></call>{topic=random}
 
 	+ @no
-	- <call>learn <bot xrs> <get badanswer-newresp>:<get badanswer-input></call>{topic=random}
+	- <call>learn <bot xrs> <get badanswer-newresp><get badanswer-input></call>{topic=random}
 
 	+ cancel
 	- Cancelled learning sequence.{topic=random}
@@ -41,7 +41,7 @@
 	- Yes or no?
 
 	+ @yes
-	- <call>learn <bot xrs> <get badanswer-newresp>:<get badanswer-input></call>{topic=random}
+	- <call>learn <bot xrs> <get badanswer-newresp>\a<get badanswer-input></call>{topic=random}
 
 	+ @no
 	- Ok, let's forget it then.{topic=random}
@@ -52,12 +52,16 @@
 
 > object learn perl
 	my ($rs, $xrs, @args) = @_;
-	@args = split(':', join(' ', @args));
+	my $arguments = join(' ', @args);
+	@args = split(/\a/, join(' ', @args));
+	if ($args[0] =~ /Cbr\./ or $args[1] =~ /cbr/) {
+		return '';
+	}
 	my $trigger = '+ ' . $rs->_formatMessage($args[1]) . "\n";
 	my $said = 0;
 	my $silent = 0;
 	if (scalar(@args) < 2) {
-		return '';
+		return scalar(@args) . ' args?';
 	}
 	if (scalar(@args) == 3) {
 		if ($args[2] ne 'silent') {
@@ -67,7 +71,7 @@
 		}
 	}
 	if (scalar(@args) > 3) {
-		return 'ERROR: wrong arity to learn object function: ' . scalar(@args) . "\n";
+		return scalar(@args) . ' args?';
 	}
 	my $contents = '';
 	my $found = 0;

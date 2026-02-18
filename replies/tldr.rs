@@ -103,10 +103,12 @@
 - This command: tldr bunx
 - This command: tldr bundle
 - This command: tldr bzip2
+- This command: tldr exit
 - This command: tldr bzip2
 - This command: tldr bzgrep
 - This command: tldr bzgrep
 - This command: tldr g++
+- This command: tldr cd
 - This command: tldr clang++
 - This command: tldr clj
 - This command: tldr git-cola
@@ -145,6 +147,7 @@
 - This command: tldr fossil init
 - This command: tldr fossil delete
 - This command: tldr gdm
+- This command: tldr read
 - This command: tldr gh accessibility
 - This command: tldr gh agent-task
 - This command: tldr gh attestation
@@ -183,6 +186,7 @@
 - This command: tldr smbserver.py
 - This command: tldr sniff.py
 - This command: tldr sniffer.py
+- This command: tldr ticketConverter.py
 - This command: tldr magick import
 - This command: tldr autojump
 - This command: tldr autojump
@@ -257,10 +261,13 @@
 - This command: tldr pulumi destroy
 - This command: tldr pulumi stack history
 - This command: tldr pulumi up
+- This command: tldr print
 - This command: tldr python
+- This command: tldr fc
 - This command: tldr radare2
 - This command: tldr bash
 - This command: tldr rc
+- This command: tldr hash
 - This command: tldr grep
 - This command: tldr rg
 - This command: tldr nano
@@ -274,6 +281,7 @@
 - This command: tldr trash
 - This command: tldr declare
 - This command: tldr ugrep
+- This command: tldr unhash
 - This command: tldr xz
 - This command: tldr xz
 - This command: tldr zstd
@@ -975,6 +983,7 @@
 - This command: mount.steamos [-h|--help]
 - This command: nautilus --help
 - This command: needrestart --help
+- This command: neo [-h|--help]
 - This command: netselect
 - This command: nitch [-h|--help]
 - This command: nstat [-h|--help]
@@ -2375,7 +2384,7 @@
 - This command: msfconsole [-v|--version]
 - This command: neotoppm [-v|-version]
 - This command: ng [v|version]
-- This command: ng version
+- This command: ng [v|version]
 - This command: ngs --version
 - This command: npm version
 - This command: octave --version
@@ -3985,6 +3994,30 @@
 
 + show the entries in the autojump database
 - This command: j [-s|--stat]
+
++ autoload
+- autoload: Mark functions for lazy loading in Zsh.
+
++ mark functions for lazy loading in zsh
+- The autoload command.
+
++ autoload a function by name
+- This command: autoload function_name
+
++ autoload a function and immediately resolve its definition
+- This command: autoload +X function_name
+
++ autoload a function using zsh style autoloading recommended
+- This command: autoload -Uz function_name
+
++ make functions from a directory available by adding it to fpath
+- This command: fpath=(path/to/functions_dir $fpath) && autoload -Uz function_name
+
++ autoload the zsh completion system
+- This command: autoload -Uz compinit && compinit
+
++ autoload and use the add zsh hook utility
+- This command: autoload -Uz add-zsh-hook
 
 + automake
 - automake: Automated Makefile generation for software projects using GNU standards.
@@ -7273,10 +7306,13 @@
 - This command: bind -X
 
 + bindkey
-- bindkey: Add keybindings to Z-Shell.
+- bindkey: Add hotkeys to Z shell.
 
-+ add keybindings to z shell
++ add hotkeys to z shell
 - The bindkey command.
+
++ list all existing hotkeys
+- This command: bindkey
 
 + bind a hotkey to a specific command
 - This command: bindkey "^k" kill-line
@@ -7287,7 +7323,7 @@
 + list keymaps
 - This command: bindkey -l
 
-+ view the hotkey in a keymap
++ list all hotkeys in a keymap
 - This command: bindkey -M main
 
 + enable vi mode
@@ -8861,6 +8897,22 @@
 + get the path to the global bin directory
 - This command: bun pm bin [-g|--global]
 
++ bun pm hash
+- bun pm hash: Generate and inspect the hash of the current lockfile.
+
++ generate and inspect the hash of the current lockfile
+- The bun pm hash command.
+
++ generate and print the hash of the current lockfile
+- This command: bun pm hash
+- This command: bun pm hash
+
++ print the string used to hash the lockfile
+- This command: bun pm hash-string
+
++ print the hash stored in the current lockfile
+- This command: bun pm hash-print
+
 + bun pm ls
 - bun pm ls: List installed dependencies and their versions.
 
@@ -8882,6 +8934,33 @@
 + migrate the lockfile in the current project
 - This command: bun pm migrate
 
++ bun pm pack
+- bun pm pack: Create a .tgz archive containing the files that would be published to npm (same behavior as npm pack).
+
++ create a tgz archive containing the files that would be published to npm same behavior as npm pack
+- The bun pm pack command.
+
++ create a tarball from the current workspace
+- This command: bun pm pack
+
++ run all steps without writing the tarball to disk
+- This command: bun pm pack --dry-run
+
++ save the tarball to a specific directory
+- This command: bun pm pack --destination path/to/directory
+
++ set an exact filename for the tarball
+- This command: bun pm pack --filename filename
+
++ skip prepack postpack and prepare scripts
+- This command: bun pm pack --ignore-scripts
+
++ set the gzip compression level 0 9 default 9
+- This command: bun pm pack --gzip-level 5
+
++ output only the tarball filename and suppress verbose logs
+- This command: bun pm pack --quiet
+
 + bun pm pkg
 - bun pm pkg: Manage package.json data with get, set, delete, and fix operations.
 
@@ -8896,6 +8975,9 @@
 
 + get multiple properties
 - This command: bun pm pkg get property1 property2 property3 ...
+
++ get nested property
+- This command: bun pm pkg get property.attribute
 
 + set a property
 - This command: bun pm pkg set property="value"
@@ -8938,14 +9020,11 @@
 + print the path to the bin directory
 - This command: bun pm bin
 
-+ list installed dependencies
-- This command: bun pm ls
++ display the default trusted dependencies
+- This command: bun pm default-trusted
 
 + print the npm registry username
 - This command: bun pm whoami
-
-+ generate and print the hash of the current lockfile
-- This command: bun pm hash
 
 + print the path to buns global module cache
 - This command: bun pm cache
@@ -9152,7 +9231,8 @@
 
 + run unit tests
 - This command: bun test
-- This command: ng test
+- This command: ng [t|test]
+- This command: ng [t|test]
 
 + download and install all the packages listed as dependencies in packagejson
 - This command: bun [i|install]
@@ -9356,6 +9436,12 @@
 
 + create a folder in bitwarden vault
 - This command: echo -n '{"name":"My Folder1"}' | base64 | bw create folder
+
++ bye
+- bye: This command is an alias of exit.
+
++ this command is an alias of exit
+- The bye command.
 
 + byobu
 - byobu: Window manager and terminal multiplexer.
@@ -11132,6 +11218,12 @@
 + generate an image using dall e
 - This command: chatgpt [-p|--prompt] "image: A white cat"
 
++ chdir
+- chdir: This command is an alias of cd.
+
++ this command is an alias of cd
+- The chdir command.
+
 + chdman
 - chdman: Manage and convert CHD (Compressed Hunks of Data) images.
 
@@ -11240,12 +11332,12 @@
 - This command: checksec --kernel
 
 + chezmoi
-- chezmoi: A multi-machine dotfile manager, written in Go.
+- chezmoi: Manage dotfiles across multiple diverse machines.
 
-+ a multi machine dotfile manager written in go
++ manage dotfiles across multiple diverse machines
 - The chezmoi command.
 
-+ setup up chezmoi creating a git repository in  local share chezmoi
++ set up chezmoi creating a git repository in  local share chezmoi
 - This command: chezmoi init
 
 + set up chezmoi from existing dotfiles of a git repository
@@ -11264,7 +11356,7 @@
 - This command: chezmoi diff
 
 + apply the changes
-- This command: chezmoi -v apply
+- This command: chezmoi apply
 
 + pull changes from a remote repository and apply them
 - This command: chezmoi update
@@ -11923,6 +12015,7 @@
 
 + clear the screen
 - This command: clear
+- This command: <Space>
 
 + clear the screen but keep the terminals scrollback buffer equivalent to pressing ctrl l in bash
 - This command: clear -x
@@ -12161,14 +12254,20 @@
 + create a tunnel with a specific name
 - This command: cloudflared tunnel create name
 
-+ establish a tunnel to a host in cloudflare from the local server
-- This command: cloudflared tunnel --hostname hostname localhost:port_number
++ list all tunnels in the account
+- This command: cloudflared tunnel list
 
-+ establish a tunnel to a host in cloudflare from the local server without verifying the local servers certificate
-- This command: cloudflared tunnel --hostname hostname localhost:port_number --no-tls-verify
++ create a dns cname record pointing to a tunnel
+- This command: cloudflared tunnel route dns name|uuid hostname
 
 + save logs to a file
-- This command: cloudflared tunnel --hostname hostname http://localhost:port_number --loglevel panic|fatal|error|warn|info|debug --logfile path/to/file
+- This command: cloudflared tunnel --loglevel panic|fatal|error|warn|info|debug --logfile path/to/file run name
+
++ run a named tunnel reads configuration from configyml
+- This command: cloudflared tunnel run name
+
++ start a temporary tunnel to expose a local service no account required
+- This command: cloudflared tunnel --url http://localhost:port
 
 + install cloudflared as a system service
 - This command: cloudflared service install
@@ -12925,6 +13024,7 @@
 + set a configuration value
 - This command: conda config --set key value
 - This command: kaggle config set [-n|--name] configuration_parameter [-v|--value] parameter_value
+- This command: ng config projects.project_name.prefix value
 - This command: sfdk config name=value
 
 + remove a configuration value
@@ -15937,6 +16037,7 @@
 + display help for a command
 - This command: dep help command
 - This command: plenv help command
+- This command: run-help command
 - This command: virsh help command
 - The qm help command.
 
@@ -16546,6 +16647,18 @@
 
 + scan a web server saving the results to a json file
 - This command: dirsearch [-u|--url] url [-e|--extensions] php --json-report path/to/report.json
+
++ disable
+- disable: Disable built-in shell commands in Zsh.
+
++ disable built in shell commands in zsh
+- The disable command.
+
++ disable command
+- This command: disable command1 command2 ...
+
++ list all disabled commands
+- This command: disable
 
 + diskonaut
 - diskonaut: Terminal disk space navigator, written in Rust.
@@ -18862,7 +18975,7 @@
 - This command: dotnet restore path/to/project_or_solution
 
 + restore dependencies without caching the http requests
-- This command: dotnet restore --no-cache
+- This command: dotnet restore --no-http-cache
 
 + force all dependencies to be resolved even if the last restore was successful
 - This command: dotnet restore --force
@@ -22189,25 +22302,25 @@
 - The ffuf command.
 
 + enumerate directories using colored output and a wordlist specifying a target url
-- This command: ffuf -c -w path/to/wordlist.txt -u http://example.com/FUZZ
+- This command: ffuf -c -w path/to/wordlist.txt -u https://example.com/FUZZ
 
 + enumerate webservers of subdomains by changing the position of the keyword
-- This command: ffuf -w path/to/subdomains.txt -u http://FUZZ.example.com
+- This command: ffuf -w path/to/subdomains.txt -u https://FUZZ.example.com
 
 + fuzz with specified threads default 40 and proxying the traffic and save output to a file
-- This command: ffuf -o -w path/to/wordlist.txt -u http://example.com/FUZZ -t 500 -x http://127.0.0.1:8080
+- This command: ffuf -o -w path/to/wordlist.txt -u https://example.com/FUZZ -t 500 -x http://127.0.0.1:8080
 
 + fuzz a specific header name value and match http status codes
-- This command: ffuf -w path/to/wordlist.txt -u http://example.com -H "Host: FUZZ" -mc 200
+- This command: ffuf -w path/to/wordlist.txt -u https://example.com -H "Host: FUZZ" -mc 200
 
-+ fuzz with specified http method and data while filtering out comma separated status codes
-- This command: ffuf -w path/to/postdata.txt -X POST -d "username=admin\&password=FUZZ" -u http://example.com/login.php -fc 401,403
++ fuzz with specified http method and data while filtering out specific status codes and response size
+- This command: ffuf -w path/to/postdata.txt -X POST -d "username=admin\&password=FUZZ" -u https://example.com/login.php -fc 302,401-499 -fs 1234
 
-+ fuzz multiple positions with multiple wordlists using different modes
-- This command: ffuf -w path/to/keys:KEY -w path/to/values:VALUE -mode pitchfork|clusterbomb -u http://example.com/id?KEY=VALUE
++ fuzz multiple positions with multiple wordlists using different modes and auto calibration to reduce false positives
+- This command: ffuf -w path/to/keys:KEY -w path/to/values:VALUE -mode pitchfork|clusterbomb -u https://example.com/id?KEY=VALUE -ac
 
 + proxy requests through a http mitm proxy such as burp suite or mitmproxy
-- This command: ffuf -w path/to/wordlist -x http://127.0.0.1:8080 -u http://example.com/FUZZ
+- This command: ffuf -w path/to/wordlist -x http://127.0.0.1:8080 -u https://example.com/FUZZ
 
 + fg
 - fg: Run jobs in foreground.
@@ -23080,6 +23193,9 @@
 
 + print a quotation from one of the database files listed by fortune  f
 - This command: fortune path/to/file
+
++ pipe a fortune through another command like cowsay or lolcat
+- This command: fortune | cowsay | lolcat
 
 + fossa
 - fossa: CLI for the Fossa service - Generate realtime license audits, vulnerability scans and reports about dependencies licenses.
@@ -24809,6 +24925,12 @@
 + enable mining
 - This command: geth --mine
 
++ getln
+- getln: This command is an alias of read -zr.
+
++ this command is an alias of read  zr
+- The getln command.
+
 + getnpusersthe period py
 - GetNPUsers.py: Enumerate Active Directory accounts with Kerberos pre-authentication disabled, which may be susceptible to AS-REP roasting attacks.
 
@@ -25197,6 +25319,7 @@
 + disable interactive prompts
 - This command: gh config set prompt disabled
 - This command: ng add package --interactive false
+- This command: ng [n|new] app_name --interactive false
 
 + set a specific configuration value
 - This command: gh config set key value
@@ -27470,7 +27593,7 @@
 + use the default diff tool to show staged changes
 - This command: git difftool --staged
 
-+ use a specific tool opendiff to show changes since a given commit
++ use a specific tool to show changes since a given commit
 - This command: git difftool [-t|--tool] opendiff commit
 
 + git effort
@@ -29019,7 +29142,7 @@
 + remove file from repository index and filesystem
 - This command: git rm path/to/file
 
-+ remove directory
++ remove directory recursively
 - This command: git rm -r path/to/directory
 
 + remove file from repository index but keep it untouched locally
@@ -32595,7 +32718,7 @@
 + delete a specific command from the hash table
 - This command: hash -d command
 
-+ print the full path of command
++ print the full path of a command
 - This command: hash -t command
 
 + hashcat
@@ -34340,6 +34463,30 @@
 + list misspelled words in a file
 - This command: hunspell -l path/to/file
 
++ hurl
+- hurl: Run and test HTTP requests defined in a simple plain text format.
+
++ run and test http requests defined in a simple plain text format
+- The hurl command.
+
++ run http requests from a file
+- This command: hurl path/to/file.hurl
+
++ run http requests and set variable to use
+- This command: hurl --variable VariableName=value path/to/file.hurl
+
++ run http requests with secret to be redacted on logs and reports
+- This command: hurl --secret SecretName=value path/to/file.hurl
+
++ run http requests and inject variables and secret from file
+- This command: hurl --variables-file path/to/variables_file --secrets-file path/to/secrets_file path/to/file.hurl
+
++ run specific http requests from file from entry 2 to 5
+- This command: hurl --from-entry 2 --to-entry 5 path/to/file.hurl
+
++ test http requests from file and generate report in html
+- This command: hurl --test --report-html path/to/output_directory path/to/file.hurl
+
 + husky
 - husky: Native Git hooks made easy.
 
@@ -35477,6 +35624,12 @@
 
 + this command is an alias of snifferpy
 - The impacket-sniffer command.
+
++ impacketthe hyphen character ticketconverter
+- impacket-ticketConverter: This command is an alias of ticketConverter.py.
+
++ this command is an alias of ticketconverterpy
+- The impacket-ticketConverter command.
 
 + import
 - import: This command is an alias of magick import.
@@ -39527,11 +39680,11 @@
 
 + check a specific script for syntax errors without executing it
 - This command: ksh -n path/to/script.ksh
-- This command: zsh --no-exec path/to/script.zsh
+- This command: zsh [-n|--no-exec] path/to/script.zsh
 
 + execute a specific script printing each command in the script before executing it
 - This command: ksh -x path/to/script.ksh
-- This command: zsh --xtrace path/to/script.zsh
+- This command: zsh [-x|--xtrace] path/to/script.zsh
 
 + kubethe hyphen character capacity
 - kube-capacity: Provide an overview of resource requests, limits, and utilization in a Kubernetes cluster.
@@ -47354,6 +47507,7 @@
 
 + add a package to the current project
 - This command: ng add package
+- This command: ng add package
 
 + add multiple packages
 - This command: ng add package1 package2 ...
@@ -47403,6 +47557,7 @@
 - The ng build command.
 
 + build an angular application or library
+- This command: ng [b|build]
 - This command: ng [b|build]
 
 + specify the output path relative to the workspace root
@@ -47456,6 +47611,51 @@
 + source the autocompletion script in the current session
 - This command: source <(ng completion script)
 
++ ng config
+- ng config: Use JSON path notation (camelCase) to edit workspace or project configurations, such as build options.
+
++ use json path notation camelcase to edit workspace or project configurations such as build options
+- The ng config command.
+
++ display all configuration values
+- This command: ng config
+
++ get a specific configuration value
+- This command: ng config projects.project_name.prefix
+
++ disable cli analytics globally
+- This command: ng config cli.analytics disabled [-g|--global]
+
++ set a global config value caution this affects all angular projects
+- This command: ng config projects.project_name.prefix value [-g|--global]
+
++ ng deploy
+- ng deploy: Invoke the deploy builder for a project in the workspace.
+
++ invoke the deploy builder for a project in the workspace
+- The ng deploy command.
+
++ deploy the default project
+- This command: ng deploy
+
++ deploy a specific project
+- This command: ng deploy project_name
+
++ deploy using a specific configuration
+- This command: ng deploy [-c|--configuration] development|production|...
+
++ ng e2e
+- ng e2e: Build and serve an Angular application, then run end-to-end tests.
+
++ build and serve an angular application then run end to end tests
+- The ng e2e command.
+
++ run end to end tests
+- This command: ng [e|e2e]
+
++ run end to end tests using a specific configuration
+- This command: ng [e|e2e] [-c|--configuration] development|production|...
+
 + ng extractthe hyphen character i18n
 - ng extract-i18n: Extract i18n messages from source code.
 
@@ -47497,6 +47697,7 @@
 
 + create a new component
 - This command: ng [g|generate] [c|component] component_name
+- This command: ng [g|generate] [c|component] component_name
 
 + create a new directive
 - This command: ng [g|generate] [d|directive] directive_name
@@ -47527,6 +47728,30 @@
 
 + use a specific output format
 - This command: ng lint project_name --format stylish|json|...
+
++ ng new
+- ng new: Create and initialize a new Angular application.
+
++ create and initialize a new angular application
+- The ng new command.
+
++ create a new angular application
+- This command: ng [n|new] app_name
+
++ preview the actions without creating files
+- This command: ng [n|new] app_name [-d|--dry-run]
+
++ skip generating unit test spects files
+- This command: ng [n|new] app_name [-S|--skip-tests]
+
++ skip automatic package installation
+- This command: ng [n|new] app_name --skip-install
+
++ skip git repository initialization
+- This command: ng [n|new] app_name [-g|--skip-git]
+
++ configure ai tooling for the project
+- This command: ng [n|new] app_name --ai-config claude|copilot|cursor|gemini|jetbrains|none|windsurf
 
 + ng run
 - ng run: Run an Architect target with an optional custom builder configuration.
@@ -47563,6 +47788,30 @@
 
 + rebuild the application when files change
 - This command: ng [s|serve] --watch
+
++ ng test
+- ng test: Run unit tests in a project.
+
++ run unit tests in a project
+- The ng test command.
+
++ run unit tests using a specific configuration
+- This command: ng [t|test] [-c|--configuration] development|production|...
+
++ specify the browsers to use for test execution
+- This command: ng [t|test] --browsers firefox|webkit|chromium
+
++ enable code coverage
+- This command: ng [t|test] --coverage
+
++ generate a coverage report in a specific format
+- This command: ng [t|test] --coverage --coverage-reporters cobertura|html|json|...
+
++ enable debug mode for tests
+- This command: ng [t|test] --debug
+
++ list all discovered test files without building or running tests
+- This command: ng [t|test] --list-tests
 
 + ng update
 - ng update: Update an Angular workspace and its dependencies.
@@ -47608,22 +47857,13 @@
 - The ng command.
 
 + create a new angular application inside a directory
-- This command: ng new project_name
+- This command: ng [n|new] project_name
 
-+ add a new component to ones application
-- This command: ng generate component component_name
++ compile the application and start a local development server
+- This command: ng [s|serve]
 
-+ add a new class to ones application
-- This command: ng generate class class_name
-
-+ add a new directive to ones application
-- This command: ng generate directive directive_name
-
-+ run the application with the following command in its root directory
-- This command: ng serve
-
-+ build the application
-- This command: ng build
++ update workspace dependencies
+- This command: ng update
 
 + nginx
 - nginx: nginx web server.
@@ -48792,6 +49032,33 @@
 
 + check one or more graphs for validity producing no output graph
 - This command: nop -p path/to/input1.gv path/to/input2.gv ...
+
++ noseyparker
+- noseyparker: Scan text and Git history for secrets and sensitive information.
+
++ scan text and git history for secrets and sensitive information
+- The noseyparker command.
+
++ scan a local file or directory for secrets
+- This command: noseyparker scan path/to/file_or_directory [-d|--datastore] path/to/datastore.np
+
++ show a report from a previous scan
+- This command: noseyparker report [-d|--datastore] path/to/datastore.np
+
++ show a report in different format default is human
+- This command: noseyparker report [-d|--datastore] path/to/datastore.np [-f|--format] human|json|jsonl|sarif
+
++ scan a remote git repo and git history for secrets
+- This command: noseyparker scan --git-url URL [-d|--datastore] path/to/datastore.np
+
++ scan all github repositories of a user or organization for secrets
+- This command: noseyparker scan --github-user|--github-organization username_or_org_name [-d|--datastore] path/to/datastore.np
+
++ list all scan rules
+- This command: noseyparker rules list
+
++ list all github repositories of a user or organization
+- This command: noseyparker github repos list --user|--organization username_or_org_name
 
 + noti
 - noti: Monitor a process and trigger a banner notification.
@@ -50047,6 +50314,7 @@
 - This command: pkgz remove package_name
 - This command: poetry self remove package_name
 - This command: apk del package
+- This command: appman [-r|remove] package
 - This command: sudo apt-get remove package
 - This command: sudo dnf4 [rm|remove] package1 package2 ...
 - This command: sudo dpkg [-r|--remove] package
@@ -54331,20 +54599,23 @@
 - The pdftk command.
 
 + extract pages 1 3 5 and 6 10 from a pdf file and save them as another one
-- This command: pdftk input.pdf cat 1-3 5 6-10 output output.pdf
+- This command: pdftk path/to/input.pdf cat 1-3 5 6-10 output path/to/output.pdf
 - This command: qpdf --empty --pages path/to/input.pdf 1-3,5,6-10 -- path/to/output.pdf
 
 + merge concatenate a list of pdf files and save the result as another one
-- This command: pdftk file1.pdf file2.pdf ... cat output output.pdf
+- This command: pdftk path/to/file1.pdf path/to/file2.pdf cat output path/to/output.pdf
 
 + split each page of a pdf file into a separate file with a given filename output pattern
-- This command: pdftk input.pdf burst output out_%d.pdf
+- This command: pdftk path/to/input.pdf burst output path/to/out_%d.pdf
 
 + rotate all pages by 180 degrees clockwise
-- This command: pdftk input.pdf cat 1-endsouth output output.pdf
+- This command: pdftk path/to/input.pdf cat 1-endsouth output path/to/output.pdf
 
 + rotate third page by 90 degrees clockwise and leave others unchanged
-- This command: pdftk input.pdf cat 1-2 3east 4-end output output.pdf
+- This command: pdftk path/to/input.pdf cat 1-2 3east 4-end output path/to/output.pdf
+
++ interleave two pdfs with one sided scans of a two sided document where the backs were scanned back to front
+- This command: pdftk A=path/to/fronts.pdf B=path/to/backs.pdf shuffle A1-end Bend-1 output path/to/output.pdf
 
 + pdftocairo
 - pdftocairo: Convert PDF files to PNG/JPEG/TIFF/PDF/PS/EPS/SVG using cairo.
@@ -61720,6 +61991,12 @@
 + rotate the stack 4 times to the left the current directory stays at the top by replacing the 5th element
 - This command: pushd -n +4
 
++ pushln
+- pushln: This command is an alias of print -nz.
+
++ this command is an alias of print  nz
+- The pushln command.
+
 + putty
 - putty: SSH, Telnet, and Rlogin client for connecting to remote servers.
 
@@ -62709,6 +62986,8 @@
 
 + r
 - R: R language interpreter.
+- r: r can refer to multiple commands with the same name.
+- r: This command is an alias of fc -e -.
 
 + r language interpreter
 - The R command.
@@ -62727,6 +63006,18 @@
 
 + check r packages from package sources
 - This command: R CMD check path/to/package_source
+
++ r can refer to multiple commands with the same name
+- The r command.
+
++ view documentation for the r language interpreter
+- This command: tldr r.1
+
++ view documentation for the zsh command
+- This command: tldr r.zsh
+
++ this command is an alias of fc  e 
+- The r command.
 
 + r2
 - r2: This command is an alias of radare2.
@@ -64084,6 +64375,12 @@
 + match a boundary around a word
 - This command: "\btext\b"
 
++ rehash
+- rehash: This command is an alias of hash -r.
+
++ this command is an alias of hash  r
+- The rehash command.
+
 + reindexdb
 - reindexdb: Rebuild indexes in a PostgreSQL database.
 
@@ -65280,6 +65577,18 @@
 
 + view documentation for the ruff code formatter
 - This command: tldr ruff format
+
++ runthe hyphen character help
+- run-help: Get instructions for Zsh commands.
+
++ get instructions for zsh commands
+- The run-help command.
+
++ activate zshs run help which adds instructions for zsh built ins
+- This command: unalias run-help && autoload run-help
+
++ display all zsh specific topics
+- This command: run-help
 
 + runit
 - runit: 3-stage init system.
@@ -69603,9 +69912,9 @@
 - This command: ssh-keygen -p -f ~/.ssh/filename
 
 + change the type of the key format for example from openssh format to pem the file will be rewritten in place
-- This command: ssh-keygen -p -N "" -m PEM -f ~/.ssh/OpenSSH_private_key
+- This command: ssh-keygen -p -m PEM -f ~/.ssh/OpenSSH_private_key
 
-+ retrieve public key from secret key
++ retrieve public key from private key
 - This command: ssh-keygen -y -f ~/.ssh/OpenSSH_private_key
 
 + sshthe hyphen character keyscan
@@ -71513,10 +71822,10 @@
 - This command: sudo tcpdump net 192.168.1.0/24
 
 + capture all traffic except traffic over port 22 and write to a dump file
-- This command: sudo tcpdump -w dumpfile.pcap port not 22
+- This command: sudo tcpdump -w path/to/dumpfile.pcap port not 22
 
 + read from a given dump file
-- This command: tcpdump -r dumpfile.pcap
+- This command: tcpdump -r path/to/dumpfile.pcap
 
 + tcpreplay
 - tcpreplay: Replay network traffic stored in a pcap file.
@@ -71705,6 +72014,40 @@
 + upload a video to https  terminalizercom
 - This command: terminalizer share path/to/recording.gif
 
++ terraform apply
+- terraform apply: Create or update infrastructure according to Terraform configuration files.
+
++ create or update infrastructure according to terraform configuration files
+- The terraform apply command.
+
++ create or update infrastructure
+- This command: terraform apply
+
++ create or update infrastructure skipping interactive approval
+- This command: terraform apply -auto-approve
+
++ apply a plan file
+- This command: terraform apply path/to/file.tfplan
+
++ specify values for input variables
+- This command: terraform apply -var 'name1=value1' -var 'name2=value2'
+- This command: terraform plan -var 'name1=value1' -var 'name2=value2'
+- This command: tofu plan -var 'name1=value1' -var 'name2=value2'
+
++ specify values for input variables from a file
+- This command: terraform apply -var-file path/to/file.tfvars
+
++ apply changes to a specific resource
+- This command: terraform apply -target resource_type.resource_name[instance index]
+
++ replace a specific resource
+- This command: terraform apply -replace resource_type.resource_name[instance index]
+
++ destroy terraform managed infrastructure
+- This command: terraform apply -destroy
+- This command: terraform destroy
+- This command: terragrunt destroy
+
 + terraform fmt
 - terraform fmt: Format configuration according to Terraform language style conventions.
 
@@ -71727,6 +72070,36 @@
 + do not list files that were formatted to stdout
 - This command: terraform fmt -list=false
 - This command: tofu fmt -list=false
+
++ terraform init
+- terraform init: Initialize a new or existing Terraform working directory.
+
++ initialize a new or existing terraform working directory
+- The terraform init command.
+
++ initialize the current working directory
+- This command: terraform init
+
++ initialize and upgrade modules and providers to the latest allowed versions
+- This command: terraform init -upgrade
+
++ initialize and reconfigure the backend ignoring any saved configuration
+- This command: terraform init -reconfigure
+
++ initialize and reconfigure the backend attempting to migrate any existing state
+- This command: terraform init -migrate-state
+
++ initialize with additional backend configuration
+- This command: terraform init -backend-config 'key=value'
+
++ initialize without backend or hcp terraform initialization
+- This command: terraform init -backend=false
+
++ initialize without interactive prompts useful for automation
+- This command: terraform init -input=false
+
++ initialize with the dependency lockfile mode set to readonly
+- This command: terraform init -lockfile readonly
 
 + terraform output
 - terraform output: Export structured data about your Terraform resources.
@@ -71756,9 +72129,8 @@
 + generate and show terraform execution plans
 - The terraform plan command.
 
-+ generate and show the execution plan in the currently directory
++ generate and show the execution plan in the current directory
 - This command: terraform plan
-- This command: tofu plan
 
 + show a plan to destroy all remote objects that currently exist
 - This command: terraform plan -destroy
@@ -71766,10 +72138,6 @@
 
 + show a plan to update the terraform state and output values
 - This command: terraform plan -refresh-only
-
-+ specify values for input variables
-- This command: terraform plan -var 'name1=value1' -var 'name2=value2'
-- This command: tofu plan -var 'name1=value1' -var 'name2=value2'
 
 + focus terraforms attention on only a subset of resources
 - This command: terraform plan -target resource_type.resource_name[instance index]
@@ -71805,10 +72173,6 @@
 - This command: terragrunt apply
 - This command: tofu apply
 
-+ destroy terraform managed infrastructure
-- This command: terraform destroy
-- This command: terragrunt destroy
-
 + terragrunt
 - terragrunt: Keep your Terraform CLI arguments DRY.
 
@@ -71834,13 +72198,13 @@
 - This command: tesseract path/to/image.png path/to/output_file
 
 + specify a custom language default is english with an iso 639 2 code eg deu  deutsch  german
-- This command: tesseract -l deu path/to/image.png path/to/output
+- This command: tesseract -l deu path/to/image.png path/to/output_file
 
 + list the iso 639 2 codes of installed languages
 - This command: tesseract --list-langs
 
 + specify a custom page segmentation mode default is 3
-- This command: tesseract --psm 0..13 path/to/image.png path/to/output
+- This command: tesseract --psm 0..13 path/to/image.png path/to/output_file
 
 + list page segmentation modes and their descriptions
 - This command: tesseract --help-psm
@@ -72118,6 +72482,18 @@
 
 + use a specific user profile directory
 - This command: thunderbird --profile path/to/profile_directory
+
++ ticketconverterthe period py
+- ticketConverter.py: Convert Kerberos tickets between kirbi and ccache formats.
+
++ convert kerberos tickets between kirbi and ccache formats
+- The ticketConverter.py command.
+
++ convert kirbi to ccache
+- This command: ticketConverter.py path/to/ticket.kirbi path/to/ticket.ccache
+
++ convert ccache to kirbi
+- This command: ticketConverter.py path/to/ticket.ccache path/to/ticket.kirbi
 
 + tidy
 - tidy: Clean up and pretty print HTML, XHTML, and XML files.
@@ -73107,6 +73483,9 @@
 
 + generate and show opentofu execution plans
 - The tofu plan command.
+
++ generate and show the execution plan in the currently directory
+- This command: tofu plan
 
 + show a plan to update the tofu state and output values
 - This command: tofu plan -refresh-only
@@ -74348,6 +74727,9 @@
 + update and install community maintained channels
 - This command: tv update-channels
 
++ view tldr pages you need to update channels first and have tldr installed
+- This command: tv tldr
+
 + twine
 - twine: Utility for publishing Python packages on PyPI.
 
@@ -74814,6 +75196,12 @@
 
 + use unflatten as a preprocessor for dot layout to improve aspect ratio
 - This command: unflatten path/to/input.gv | dot -T png path/to/output.png
+
++ unfunction
+- unfunction: This command is an alias of unhash -f.
+
++ this command is an alias of unhash  f
+- The unfunction command.
 
 + unimatrix
 - unimatrix: Simulate the Matrix look with Unicode characters.
@@ -78626,6 +79014,21 @@
 + set the gamma default 10
 - This command: wlsunset -g gamma_value
 
++ wn
+- wn: Look up related words in a WordNet database.
+
++ look up related words in a wordnet database
+- The wn command.
+
++ show information available for the word emphatically
+- This command: wn emphatically
+
++ list synonyms of the adverb emphatically
+- This command: wn emphatically -synsr
+
++ list antonyms of the adjective slow
+- This command: wn slow -antsa
+
 + wondershaper
 - wondershaper: Allows the user to limit the bandwidth of network adapters.
 
@@ -80267,16 +80670,16 @@
 + a dotfiles manager that works by using git
 - The yadm command.
 
-+ override the yadm directory yadm stores its configurations relative to this directory
++ override yadms configuration directory
 - This command: yadm --yadm-dir
 
-+ override the yadm data directory yadm stores its data relative to this directory
++ override yadms data directory yadm stores its data relative to this directory
 - This command: yadm --yadm-data
 
 + override the location of the yadm repository
 - This command: yadm --yadm-repo
 
-+ override the location of the yadm configuration file
++ override the location of yadms main configuration file
 - This command: yadm --yadm-config
 
 + override the location of the yadm encryption configuration
@@ -81833,10 +82236,10 @@
 - The zsh command.
 
 + start an interactive shell session in verbose mode printing each command before executing it
-- This command: zsh --verbose
+- This command: zsh [-v|--verbose]
 
-+ execute a specific command inside zsh with disabled glob patterns
-- This command: noglob command
++ start zsh without loading user level configuration eg  zshrc
+- This command: zsh [-f|--no-rcs]
 
 + zstd
 - zstd: Compress or decompress files with Zstandard compression.
@@ -82723,6 +83126,7 @@
 
 + install a new package
 - This command: apk add package
+- This command: appman [-i|install] package
 - This command: aurman [-S|--sync] package
 - This command: guix package [-i|--install] package
 - This command: sudo pacman -S package
@@ -82795,6 +83199,30 @@
 + this command is an alias of aa status
 - The apparmor_status command.
 
++ appman
+- appman: Package manager for AppImages.
+
++ package manager for appimages
+- The appman command.
+
++ update all packages to the latest available versions
+- This command: appman [-u|update]
+
++ search packages via keywords
+- This command: appman [-q|query] package
+- This command: dnf [se|search] keyword1 keyword2 ...
+- This command: dnf4 [se|search] keyword1 keyword2 ...
+
++ list all available packages
+- This command: appman [-l|list]
+- This command: deb-get list
+- This command: pacfile path/to/file_or_directory
+- This command: pacsift
+- This command: pkcon get-packages
+
++ update appman to the latest version available
+- This command: appman [-s|sync]
+
 + apportthe hyphen character bug
 - apport-bug: File a bug report on Ubuntu.
 
@@ -82841,6 +83269,36 @@
 
 + build using fakeroot for unprivileged builds
 - This command: apptainer build [-f|--fakeroot] path/to/image.sif path/to/definition.def
+
++ apptainer cache
+- apptainer cache: Manage the local Apptainer cache.
+
++ manage the local apptainer cache
+- The apptainer cache command.
+
++ list all cached container images
+- This command: apptainer cache list
+
++ list cached container images with detailed information
+- This command: apptainer cache list [-v|--verbose]
+
++ list only a specific cache type
+- This command: apptainer cache list [-T|--type] library|oci|shub|blob|...
+
++ clean the entire cache
+- This command: apptainer cache clean
+
++ clean only a specific cache type
+- This command: apptainer cache clean [-T|--type] library|oci|shub|blob|...
+
++ clean cache entries older than a specific number of days
+- This command: apptainer cache clean [-D|--days] days
+
++ preview what would be cleaned without removing anything
+- This command: apptainer cache clean [-n|--dry-run]
+
++ force clean without confirmation
+- This command: apptainer cache clean [-f|--force]
 
 + apptainer delete
 - apptainer delete: Delete container images from a remote library.
@@ -87345,12 +87803,6 @@
 + remove a package using purge instead also removes its configuration files
 - This command: deb-get remove package
 
-+ list all available packages
-- This command: deb-get list
-- This command: pacfile path/to/file_or_directory
-- This command: pacsift
-- This command: pkcon get-packages
-
 + debchange
 - debchange: Maintain the debian/changelog file of a Debian source package.
 
@@ -87606,6 +88058,9 @@
 
 + request the dhcp server for new leases
 - This command: sudo dhcpcd [-n|--rebind]
+
++ print dump the last acquired lease for a given interface and exit
+- This command: sudo dhcpcd [-U|--dumplease] interface_name
 
 + dialog
 - dialog: Display dialog boxes on the terminal.
@@ -88149,10 +88604,6 @@
 
 + package manager for fedora 41 and rhel 10
 - The dnf command.
-
-+ search packages via keywords
-- This command: dnf [se|search] keyword1 keyword2 ...
-- This command: dnf4 [se|search] keyword1 keyword2 ...
 
 + display details about a package
 - This command: dnf [if|info] package
@@ -89739,8 +90190,8 @@
 + reserve a file taking up 700 mib of disk space
 - This command: fallocate [-l|--length] 700M path/to/file
 
-+ shrink an already allocated file by 200 mib
-- This command: fallocate [-c|--collapse-range] [-l|--length] 200M path/to/file
++ shrink an already allocated file by 200 mb
+- This command: fallocate [-c|--collapse-range] [-l|--length] 200MB path/to/file
 
 + shrink 20 mb of space after 100 mib in a file
 - This command: fallocate [-c|--collapse-range] [-o|--offset] 100M [-l|--length] 20M path/to/file
@@ -92243,9 +92694,9 @@
 - This command: http_load -parallel 5 -fetches 1000 path/to/urls.txt
 
 + hwclock
-- hwclock: Read or change the hardware clock. Usually requires root.
+- hwclock: Read or change the hardware clock.
 
-+ read or change the hardware clock usually requires root
++ read or change the hardware clock
 - The hwclock command.
 
 + display the current time as reported by the hardware clock
@@ -98136,6 +98587,30 @@
 
 + manage files and directories in cinnamon desktop environment
 - The nemo command.
+
++ neo
+- neo: Simulate the digital rain from "The Matrix".
+
++ simulate the digital rain from the matrix
+- The neo command.
+
++ set scroll speed and asynchronous columns
+- This command: neo [-S|--speed] 12 [-a|--async]
+
++ change text color and colormode
+- This command: neo [-c|--color] green --colormode 256
+
++ display a centered message
+- This command: neo [-m|--message] "Hello World"
+
++ set droplet density and glitch percentage
+- This command: neo [-d|--density] 2.0 [-G|--glitchpct] 20.0
+
++ use a specific charset
+- This command: neo --charset ascii|greek|cyrillic|arabic|braille|runic|...
+
++ exit neo
+- This command: <Esc>|<q>
 
 + nerdctl
 - nerdctl: Docker-compatible CLI for containerd.
@@ -104235,25 +104710,25 @@
 - This command: runlim --space-limit=number command command_arguments
 
 + runuser
-- runuser: Run commands as a user and group without asking for password (needs root privileges).
+- runuser: Run commands as a user and group without asking for password.
 
-+ run commands as a user and group without asking for password needs root privileges
++ run commands as a user and group without asking for password
 - The runuser command.
 
 + run command as a different user
-- This command: runuser user [-c|--command] 'command'
+- This command: sudo runuser user [-c|--command] 'command'
 
 + run command as a different user and group
-- This command: runuser user [-g|--group] group [-c|--command] 'command'
+- This command: sudo runuser user [-g|--group] group [-c|--command] 'command'
 
 + start a login shell as a specific user
-- This command: runuser user [-l|--login]
+- This command: sudo runuser user [-l|--login]
 
 + specify a shell for running instead of the default shell also works for login
-- This command: runuser user [-s|--shell] /bin/sh
+- This command: sudo runuser user [-s|--shell] /bin/sh
 
 + preserve the entire environment of root only if   login is not specified
-- This command: runuser user [-p|--preserve-environment] [-c|--command] 'command'
+- This command: sudo runuser user [-p|--preserve-environment] [-c|--command] 'command'
 
 + rusnapshot
 - rusnapshot: BTRFS snapshotting utility written in Rust.
@@ -112440,10 +112915,10 @@
 - This command: echo 123 | xclip [-se|-selection] [c|clipboard]
 
 + copy the contents of a file into the system clipboard
-- This command: xclip [-se|-selection] [c|clipboard] input_file.txt
+- This command: xclip [-se|-selection] [c|clipboard] path/to/input_file.txt
 
 + copy the contents of a png into the system clipboard can be pasted in other programs correctly
-- This command: xclip [-se|-selection] [c|clipboard] [-t|-target] image/png input_file.png
+- This command: xclip [-se|-selection] [c|clipboard] [-t|-target] image/png path/to/input_file.png
 
 + copy the user input in the console into the system clipboard
 - This command: xclip [-i|-in]

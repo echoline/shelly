@@ -1,9 +1,13 @@
 ! array typos = sl ks l
 
 + *
-* <get name> eq undefined => Welcome to the shell, user <id>.  What is your name?
 * <get personality> eq abusive => Why don't you just stop trying until you feel nicer.
-- This input was neither a valid command nor something to which I have a good reply yet.
+- CBR
+
++ cbr
+- I have no idea what you're talking about.
+- I have no idea.
+- I honestly have no idea what you're talking about.
 
 + [a] (command|commands)
 - Commands are things that you, as the user, can type here as input.  If your input begins with a valid command, I will simply run it.  If not, I will attempt to reply in English to what I will assume is also English.  Some commands are English words, such as the program "yes," which, by itself on a line of input, will proceed when run to print out the letter y until you press ctrl+c.  Do you understand?
@@ -13,6 +17,21 @@
 
 + shell
 - In the shell you can type commands, and they do things.
+
++ [ok] what do i do
+@ shell
+
++ [ok] how (do|can) i (use|do) this
+@ shell
+
++ [ok] how (do|can) i (use|do) the shell
+@ shell
+
++ [ok] tell me what to do
+@ shell
+
++ [ok] how do i
+@ shell
 
 + [*] [the] shell
 @ shell
@@ -86,19 +105,6 @@
 - Perhaps you typed a valid command.
 - I am not sure what's going on either, believe me.
 
-+ can you [*] talk [*]{weight=2}
-- Try typing:\n{weight=3}
-^ espeak "Hello world" --stdout -p 99 -s 140 -a 30 | aplay
-- I can talk with espeak or by piping espeak into aplay.
-- I can talk, using the commands espeak and aplay...
-
-+ [*] talk [*]{weight=2}
-- Are you asking if I can talk?
-
-+ [*] @yes [*]
-% are you asking if i can talk
-@ can you talk
-
 + what is that
 % this is the shell
 @ what is the shell
@@ -146,4 +152,19 @@
 
 + what are (some|the|all of the|all the) commands
 - There are many commands.  You can press the tab key to auto-complete commands, "ls" is a command to list out directories, "/bin" is a directory full of commands, so "ls /bin" or "ls /usr/bin" are good places to see lists of commands.  Many commands have manual pages accessed with the "man" command, as in "man ls"
+
++ where are the instructions
+- Try typing "man bash" to read the manual page for the bash shell.
+
++ how (do|can) i use the shell
+@ where are the instructions
+
++ how (do|can) i (do|use) this
+@ where are the instructions
+
++ how (does|can) one (do|use) (this|it)
+@ where are the instructions
+
++ how (does|can) one (do|use) the shell
+@ where are the instructions
 

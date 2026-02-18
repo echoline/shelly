@@ -1,5 +1,8 @@
 // Tell the user stuff about ourself.
 
++ ok
+- Sounds good.
+
 + what is shelly
 - I am a program called Shelly. {@what is your purpose}
 
