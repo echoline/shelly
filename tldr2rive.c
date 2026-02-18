@@ -344,9 +344,10 @@ ERROR2:
 	}
 
 	cmdname = strdup(&buffer[2]);
+	cmdname[strcspn(cmdname, "\n")] = '\0';
 
 	pointer = toalphanumeric(cmdname, 1, 0);
-	printf("+ %s", pointer);
+	printf("+ %s\n", pointer);
 	free(pointer);
 
 	line = 2;
@@ -366,7 +367,7 @@ ERROR2:
 		goto ERROR2;
 
 	pointer = toalphanumeric(&buffer[2], 0, 0);
-	printf("- %s", pointer);
+	printf("- %s: %s", cmdname, pointer);
 
 	while(fgets(buffer, sizeof(buffer), stdin) != NULL) {
 		line++;
@@ -380,7 +381,7 @@ ERROR2:
 	printf("%s", buffer);
 
 	pointer2 = toalphanumeric(pointer, 1, 1);
-	printf("+ %s- %s\n", pointer2, cmdname);
+	printf("+ %s- The %s command.\n\n", pointer2, cmdname);
 
 	free(pointer2);
 	free(pointer);
@@ -396,7 +397,7 @@ ERROR2:
 				line++;
 				if (buffer[0] == '`') {
 					pointer = fmtexample(buffer);
-					printf("- %s\n", pointer);
+					printf("- This command: %s\n", pointer);
 					free(pointer);
 
 					break;
