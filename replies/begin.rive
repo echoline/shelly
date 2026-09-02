@@ -1,32 +1,9 @@
 ! version = 2.0
 
 > begin
-	+ request // This trigger is tested first.
-	* <reply2> ne undefined => {ok}<call>learn <bot xrs> {sentence}<input>.{/sentence}<reply2>silent</call>
-	- {ok}    // An {ok} in the response means it's okay to get a real reply
+	+ request
+        - {lowercase}{ok}{/lowercase}
 < begin
-
-// The Botmaster's Name
-! var master = 0
-
-// Bot Variables
-! var name     = Shelly
-! var fullname = Shelly Rive
-! var age      = 5
-! var birthday = October 12
-! var sex      = female
-! var location = Oregon
-! var city     = La Grande
-! var eyes     = blue
-! var hair     = light brown
-! var hairlen  = short
-! var color    = blue
-! var band     = Nickelback
-! var book     = Myst
-! var author   = Stephen King
-! var job      = command prompt
-! var website  = echoline.org
-! var browser  = firefox
 
 // Substitutions
 ! sub &quot;    = "
@@ -42,12 +19,12 @@
 ! sub i'd       = i would
 ! sub i've      = i have
 ! sub i'll      = i will
-! sub dont     = do not
-! sub isnt     = is not
-! sub youd     = you would
-! sub youre    = you are
-! sub youve    = you have
-! sub youll    = you will
+! sub don't     = do not
+! sub isn't     = is not
+! sub you'd     = you would
+! sub you're    = you are
+! sub you've    = you have
+! sub you'll    = you will
 ! sub he'd      = he would
 ! sub he's      = he is
 ! sub he'll     = he will
@@ -64,16 +41,16 @@
 ! sub we'll     = we will
 ! sub whats     = what is
 ! sub what's    = what is
-! sub whatre   = what are
-! sub whatve   = what have
-! sub whatll   = what will
-! sub cant     = can not
+! sub what're   = what are
+! sub what've   = what have
+! sub what'll   = what will
+! sub can't     = can not
 ! sub whos      = who is
 ! sub who's     = who is
 ! sub who'd     = who would
 ! sub who'll    = who will
-! sub dont     = do not
-! sub didnt    = did not
+! sub don't     = do not
+! sub didn't    = did not
 ! sub it's      = it is
 ! sub could've  = could have
 ! sub couldn't  = could not
@@ -168,8 +145,6 @@
 ! sub (k)       = kissyface
 ! sub (f)       = rose
 ! sub (w)       = wilted rose
-! sub wtf	= what the fuck
-! sub omg	= oh my god
 
 // Person substitutions
 ! person i am    = you are
@@ -180,7 +155,6 @@
 ! person your    = my
 ! person you     = I
 ! person i       = you
-! person me      = you
 
 // Set arrays
 ! array malenoun   = male guy boy dude boi man men gentleman gentlemen
@@ -189,10 +163,7 @@
 ! array womennoun  = females girls chicks women ladies babes
 ! array lol        = lol lmao rofl rotfl haha hahaha
 ! array colors     = white black orange red blue green yellow cyan fuchsia gray grey brown turquoise pink purple gold silver navy
-! array heightadj  = tall long wide thick
-! array lengthunit = inch in centimeter cm millimeter mm meter m inches centimeters millimeters meters
-! array yes        = yeah yep yup ya yea affirmative
-! array no         = no nah nope nay negative
-! array rudename   = bitch fucker cocksucker fool asshole
-! array hello      = hello hi hey howdy hola hai yo
-! array badword    = bitch fuck asshole shit fag nigger
+! array height     = tall long wide thick
+! array measure    = inch in centimeter cm millimeter mm meter m inches centimeters millimeters meters
+! array yes        = yes yeah yep yup ya yea
+! array no         = no nah nope nay

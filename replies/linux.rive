@@ -1,0 +1,173 @@
++ what is linux
+- It is the core kernel of an operating system. Complete systems bundle the kernel with utilities and user interfaces, known as distributions (distros).
+
++ is linux free
+- Yes. The source code is free to use, study, and change under the GNU General Public License.
+
++ what is a distribution
+- Popular versions like Linux Mint, Ubuntu, or Fedora package the Linux kernel with apps and desktop tools.
+
++ will linux run on my pc
+- Linux runs on almost all standard PC hardware, Intel, AMD, and ARM processors.
+
++ shell
+- You can open the command-line interface to type commands directly to the shell.
+- Type commands here to run them in the shell.
+- Type commands here. You can read manuals with the "man" command.
+
++ terminal
+@ shell
+
++ what is (a|the) (shell|terminal)
+@ shell
+
++ how do i use (a|the) (shell|terminal)
+@ shell
+
++ how do i (use|do|operate|run|drive) this
+@ shell
+
++ what do i do
+@ shell
+
++ how do i use (you|it|this){weight=10}
+@ shell
+
++ how do i
+- It can be hard to learn everything. Just try commands. Learn by doing!
+
++ commands
+- Tab-completion can help you complete command names in the shell - try pressing tab a couple of times.
+
++ what commands
+@ commands
+
++ what are the command names
+@ commands
+
++ what are the [text] commands [*]
+@ commands
+
++ what are all [of] the command names
+@ commands
+
++ what are the [shell] [text] commands
+@ commands
+
++ what are all [of] the [shell] [text] commands
+@ commands
+
++ what are the program names
+@ commands
+
++ what are all [of] the program names
+@ commands
+
++ what are the programs [*]
+@ commands
+
++ what are all [of] the programs
+@ commands
+
++ what are commands
+@ commands
+
++ how do i see [all] [of] the commands
+@ commands
+
++ manual [page]
+- Try typing "man man" for the manual for the manual program - man.
+
++ how do i (use|run) *
+@ manual
+
++ how do i (use|run) the (command|program) *
+@ manual
+
++ what are the [basic] commands
+- Use "ls" to list files, "cd" to change folders, and "pwd" to see your current folder path.
+
++ how do i (close|exit|quit|stop) *
+- Sometimes a program can be cancelled by pressing ctrl+c, sometimes by pressing the escape key, or by typing :q.
+
++ ram
+- Try typing "free -m". See "man free".
+
++ how much ram do i have
+@ ram
+
++ how much ram is (free|left|used)
+@ ram
+
++ how much ram is being used
+@ ram
+
++ how much ram is in use
+@ ram
+
++ how do i (check|see) how much ram i have
+@ ram
+
++ how do i (check|see) (my|the) ram
+@ ram
+
++ how much disk space is required
+- A basic install needs about 20 GB of free space.
+
++ disk
+- Try typing "df -h". See "man df".
+
++ how much disk space do i have
+@ disk
+
++ how much disk space is (free|left)
+@ disk
+
++ how (big|large) is (my|the) disk
+@ disk
+
++ how much (ram|disk) [space] is (in|on) (this|the|my) (computer|system)
+@ <star>
+
++ top
+- Try typing "ps aux" or "top". See "man ps" or "man top".
+
++ what (programs|commands) are [currently] (running|being run)
+@ top
+
++ what (programs|commands) are (running|being run) [right] now
+@ top
+
++ what is (running|being run)
+@ top
+
++ what is [currently] (running|being run)
+@ top
+
++ what is (running|being run) [right] now
+@ top
+
++ how do i (exit|quit|close) [out] [of] [from] top [*]
+- Just press "q". See "man top".
+
++ man
+- See "man man".
+
++ what is man
+@ man
+
++ what is the man [command]
+@ man
+
++ what is the man [program]
+@ man
+
++ run
+- If you don't find it in a menu, maybe it is a command here. You can press tab complete to list all of the commands, and use "man" to read manual pages.
+
++ (run|use) *
+@ run
+
++ how do i (run|use) *
+@ run
+
